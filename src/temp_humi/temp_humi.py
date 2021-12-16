@@ -9,6 +9,7 @@ class aht20_interface:
         self.sensor = adafruit_ahtx0.AHTx0(self.i2c)
         
     def read_values(self):
+        # gather values and return them as a dictionary
         values = {'temp':self.sensor.temperature, 'humi':self.sensor.relative_humidity}
         return values
 
