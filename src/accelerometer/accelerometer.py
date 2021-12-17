@@ -3,6 +3,8 @@ import time
 import board
 import adafruit_adxl34x
 
+# TODO: create a sudo-speedometer using this accelerometer. It won't be perfect but I think that it will be cool to try
+
 class adxl345_interface:
     def __init__(self):
         self.i2c = board.I2C()  # uses board.SCL and board.SDA
