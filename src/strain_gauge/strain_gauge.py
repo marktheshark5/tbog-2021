@@ -5,7 +5,8 @@ import time
 import board
 import busio
 import adafruit_ads1x15.ads1115 as ADS
-from adafruit_ads1x15.analog_in import AnalogIn
+from analog_in_diff import AnalogIn
+# from adafruit_ads1x15.analog_in import AnalogIn
 
 class strainGauge(): 
     def __init__(self):
@@ -22,8 +23,8 @@ class strainGauge():
         return values
 
 # # example implementation
-# sen = strainGauge()
-# while True:
-#     values = sen.readValue()
-#     print("{:>5}\t{:>5.3f}".format(values.value, values.voltage))
-#     time.sleep(1)
+sen = strainGauge()
+while True:
+    values = sen.readValue()
+    print("{:>5}\t{:>5.3f}".format(values.value, values.voltage))
+    time.sleep(1)
