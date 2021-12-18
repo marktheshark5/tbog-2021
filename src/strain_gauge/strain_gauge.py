@@ -22,7 +22,7 @@ class strainGauge:
             self.chan = AnalogIn(self.adc, ADS.P2, ADS.P3)
 
     def readValue(self):
-        # Create differential input between channel 0
+        # read value over I2C and return as a dictionary
         values = {'value' : self.chan.value, 'voltage' : self.chan.voltage}
         return values
 
