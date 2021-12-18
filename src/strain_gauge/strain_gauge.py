@@ -23,7 +23,7 @@ class strainGauge:
 
     def readValue(self):
         # Create differential input between channel 0
-        values = AnalogIn(self.adc, ADS.P0)
+        values = {'value' : self.chan.value, 'voltage' : self.chan.voltage}
         return values
 
 # # example implementation
@@ -33,9 +33,9 @@ class strainGauge:
 # while True:
 #     values = adc0.readValue()
 #     print('sen0: ')
-#     print("{:>5}\t{:>5.3f}".format(values.value, values.voltage))
+#     print("{:>5}\t{:>5.3f}".format(values['value'], values['voltage']))
 #     time.sleep(1)
 #     values = adc1.readValue()
 #     print('sen1: ')
-#     print("{:>5}\t{:>5.3f}".format(values.value, values.voltage))
+#     print("{:>5}\t{:>5.3f}".format(values['value'], values['voltage']))
 #     time.sleep(1)
