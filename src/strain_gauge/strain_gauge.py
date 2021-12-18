@@ -14,12 +14,12 @@ class strainGauge:
         
         if adcNum == 0: 
             # Create the ADC object using the I2C bus
-            self.adc = ADS.ADS1115(i2c) # using default slave I2C address 0x48 (ADDR to ground)
+            adc = ADS.ADS1115(i2c) # using default slave I2C address 0x48 (ADDR to ground)
             # Create differential ADC
-            self.chan = AnalogIn(self.adc, ADS.P0, ADS.P1)
+            self.chan = AnalogIn(adc, ADS.P0, ADS.P1)
         else: # address
-            self.adc = ADS.ADS1115(i2c, address = 0x49) # ADDR pin pulled to 3V3
-            self.chan = AnalogIn(self.adc, ADS.P2, ADS.P3)
+            adc = ADS.ADS1115(i2c, address = 0x49) # ADDR pin pulled to 3V3
+            self.chan = AnalogIn(adc, ADS.P2, ADS.P3)
 
     def readValue(self):
         # read value over I2C and return as a dictionary
