@@ -7,8 +7,8 @@ import adafruit_adxl34x
 
 class adxl345_interface:
     def __init__(self):
-        self.i2c = board.I2C()  # uses board.SCL and board.SDA
-        self.accelerometer = adafruit_adxl34x.ADXL345(self.i2c)
+        i2c = board.I2C()
+        self.accelerometer = adafruit_adxl34x.ADXL345(i2c)
 
     def read_values(self):
         # gather values and return them as an array
